@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284781910}
   - component: {fileID: 284781909}
+  - component: {fileID: 284781911}
   m_Layer: 0
   m_Name: Game manager
   m_TagString: Untagged
@@ -151,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e325f9133e882c4a9de4e72f6e69d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 457275323}
+  _scoreText: {fileID: 457275323}
+  _currentScore: 0
 --- !u!4 &284781910
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +169,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284781911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284781908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839b02a9e81feef48924e629e6a5dfb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _priceText: {fileID: 324735612}
 --- !u!1 &324735610
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,9 +729,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 284781909}
-        m_TargetAssemblyTypeName: Getpoints, Assembly-CSharp
-        m_MethodName: MultiplierScore
+      - m_Target: {fileID: 284781911}
+        m_TargetAssemblyTypeName: PaymentManagement, Assembly-CSharp
+        m_MethodName: IncreasePrice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -6,28 +6,28 @@ using TMPro;
 
 public class Getpoints : MonoBehaviour
 {
-    [SerializeField] private TMP_Text score;
-    private float currentScore;
-    private float addScore;
+    [SerializeField] private TMP_Text _scoreText;
+    public float _currentScore;
+    private float _addScore;
 
     private void Start()
     {
-        currentScore = 0;
-        addScore = 1;
+        _currentScore = 0;
+        _addScore = 1;
     }
 
     private void Update()
     {
-        score.text = currentScore.ToString();
+        _scoreText.text = _currentScore.ToString();
     }
 
     public void IncreaseScore()
     {
-        currentScore = currentScore + addScore;
+        _currentScore = _currentScore + _addScore;
     }
     
     public void MultiplierScore()
     {
-        addScore += 1;
+        _addScore += 1;
     }
 }

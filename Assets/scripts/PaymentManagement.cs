@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
+
+public class PaymentManagement : MonoBehaviour
+{
+    [SerializeField] private TMP_Text _priceText;
+    private float _price;
+
+    private void Start()
+    {
+        _price = 5;
+    }
+
+    private void Update()
+    {
+        _priceText.text = _price.ToString();
+    }
+
+    public void IncreasePrice()
+    {
+        _price = _price *2;
+        
+    }
+}
