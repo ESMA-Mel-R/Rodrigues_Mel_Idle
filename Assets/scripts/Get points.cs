@@ -8,7 +8,7 @@ public class Getpoints : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     public float _currentScore;
-    private float _addScore;
+    public float _addScore;
 
     private void Start()
     {

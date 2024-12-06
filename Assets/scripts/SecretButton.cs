@@ -5,7 +5,7 @@ using UnityEngine;
 public class SecretButton : MonoBehaviour
 {
     public Autoclick Ac;
-    public PaymentManagement Pm;
+    public Getpoints Gp;
     private bool active;
 
     void Start()
@@ -17,7 +17,22 @@ public class SecretButton : MonoBehaviour
     {
         if (active)
         {
-            Ac._gain = Ac._gain * 2;
+            StartCoroutine(Boost());
+            active = false;
         }
+    }
+
+    public void Activate()
+    {
+        active = true;
+    }
+
+    IEnumerator Boost()
+    {
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        Ac._gain = Ac._gain * 2;
+        Gp._addScore = Gp._addScore * 2;
+        yield return new WaitForSeconds(5);
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }
