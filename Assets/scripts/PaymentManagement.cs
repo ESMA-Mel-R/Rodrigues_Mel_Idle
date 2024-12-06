@@ -23,7 +23,7 @@ public class PaymentManagement : MonoBehaviour
 
     public void IncreasePrice()
     {
-        _price = _price *2; 
+        _price = _price *1.25f; 
     }
 
     public void DecreasePoints()
