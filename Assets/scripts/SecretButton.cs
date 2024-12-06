@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class SecretButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Autoclick Ac;
+    public PaymentManagement Pm;
+    private bool active;
+
     void Start()
     {
-        
+        active = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (active)
+        {
+            Ac._gain = Ac._gain * 2;
+        }
     }
 }
