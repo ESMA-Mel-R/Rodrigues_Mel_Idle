@@ -8,7 +8,8 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PaymentManagement : MonoBehaviour
 {
     [SerializeField] private TMP_Text _priceText;
-    private float _price;
+    public Getpoints gp;
+    public float _price;
 
     private void Start()
     {
@@ -22,7 +23,11 @@ public class PaymentManagement : MonoBehaviour
 
     public void IncreasePrice()
     {
-        _price = _price *2;
-        
+        _price = _price *2; 
+    }
+
+    public void DecreasePoints()
+    {
+        gp._currentScore -= _price;
     }
 }
