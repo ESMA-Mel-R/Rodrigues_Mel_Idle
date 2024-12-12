@@ -7,12 +7,14 @@ using TMPro;
 public class Getpoints : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private TMP_Text _priceText;
-    public float _currentScore;
-    public float _addScore;
+    [SerializeField] private TMP_Text _autopriceText;
+    [SerializeField] private TMP_Text _multipriceText;
+    private float _currentScore;
+    private float _addScore;
     private bool _auto;
     private int _autoPerSec;
-    public float _autoprice;
+    private float _autoprice;
+    private float _multiprice;
 
     private void Start()
     {
@@ -20,12 +22,14 @@ public class Getpoints : MonoBehaviour
         _addScore = 1;
         _autoPerSec = 0;
         _auto = false;
-        _autoprice = 10;
+        _autoprice = 5;
+        _multiprice = 10;
     }
 
     private void Update()
     {
-        _priceText.text = _autoprice.ToString();
+        _autopriceText.text = _autoprice.ToString();
+        _multipriceText.text = _multiprice.ToString();
 
         //update according to autoclick
         if (_auto)
@@ -44,7 +48,12 @@ public class Getpoints : MonoBehaviour
     //setting of multiplier button : increase the gain each time it's clicked
     public void MultiplierScore()
     {
-        _addScore += 1;
+        if (_currentScore >= _multiprice)
+        {
+            _addScore += 1;
+            _currentScore -= _multiprice;
+            _multiprice += 5;
+        }
     }
 
     public void AutoClickUpgrade()
@@ -54,7 +63,7 @@ public class Getpoints : MonoBehaviour
             _auto = true;
             _currentScore -= _autoprice;
             _autoPerSec += 1;
-            _autoprice += 10;
+            _autoprice += 5;
         }
     }
 }
