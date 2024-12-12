@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PaymentManagement : MonoBehaviour
 {
+    //price management for multiplier
     [SerializeField] private TMP_Text _priceText;
     public Getpoints gp;
     public float _price;

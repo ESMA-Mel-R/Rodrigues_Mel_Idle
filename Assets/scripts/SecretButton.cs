@@ -30,7 +30,6 @@ public class SecretButton : MonoBehaviour
     IEnumerator Boost()
     {
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        Ac._gain = Ac._gain * 2;
         Gp._addScore = Gp._addScore * 2;
         yield return new WaitForSeconds(5);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);

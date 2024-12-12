@@ -5,26 +5,19 @@ using UnityEngine;
 
 public class Autoclick : MonoBehaviour
 {
+    //price management for autoclick
     [SerializeField] private TMP_Text _priceText;
     public Getpoints gp;
     public float _price;
-    public float _gain;
-    private bool active;
 
     private void Start()
     {
         _price = 10;
-        _gain = 0;
-        active =false;
     }
 
     void Update()
     {
         _priceText.text = _price.ToString();
-        if (active)
-        {
-            gp._currentScore += _gain;
-        }
     }
 
     public void IncreasePrice()
@@ -35,11 +28,5 @@ public class Autoclick : MonoBehaviour
     public void DecreasePoints()
     {
         gp._currentScore -= _price;
-    }
-
-    public void AutoStart()
-    {
-        active = true;
-        _gain = 1;
     }
 }

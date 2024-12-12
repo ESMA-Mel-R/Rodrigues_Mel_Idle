@@ -205,9 +205,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 284781912}
-        m_TargetAssemblyTypeName: Autoclick, Assembly-CSharp
-        m_MethodName: AutoStart
+      - m_Target: {fileID: 284781909}
+        m_TargetAssemblyTypeName: Getpoints, Assembly-CSharp
+        m_MethodName: AutoClickUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -314,6 +314,7 @@ MonoBehaviour:
   _scoreText: {fileID: 457275323}
   _currentScore: 0
   _addScore: 0
+  Ac: {fileID: 0}
 --- !u!4 &284781910
 Transform:
   m_ObjectHideFlags: 0
@@ -359,7 +360,6 @@ MonoBehaviour:
   _priceText: {fileID: 619296483}
   gp: {fileID: 284781909}
   _price: 0
-  _gain: 0
 --- !u!114 &284781913
 MonoBehaviour:
   m_ObjectHideFlags: 0
