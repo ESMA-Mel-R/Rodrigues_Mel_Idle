@@ -40,6 +40,6 @@ public class Autoclick : MonoBehaviour
     public void AutoStart()
     {
         active = true;
-        _gain += 1;
+        _gain = 1;
     }
 }
