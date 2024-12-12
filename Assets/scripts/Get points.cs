@@ -11,7 +11,7 @@ public class Getpoints : MonoBehaviour
     public float _addScore;
     private bool _auto;
     private int _autoPerSec;
-    private float _autoprice;
+    public float _autoprice;
     public Autoclick Ac;
 
     private void Start()
@@ -20,7 +20,7 @@ public class Getpoints : MonoBehaviour
         _addScore = 1;
         _autoPerSec = 0;
         _auto = false;
-        _autoprice = Ac._price;
+        _autoprice = 10;
     }
 
     private void Update()
@@ -46,9 +46,10 @@ public class Getpoints : MonoBehaviour
 
     public void AutoClickUpgrade()
     {
-        if (_currentScore >= _autoprice)
+        if (!_auto && _currentScore >= _autoprice)
         {
             _auto = true;
+            _currentScore -= _autoprice;
             _autoPerSec += 1;
         }
     }

@@ -12,7 +12,7 @@ public class Autoclick : MonoBehaviour
 
     private void Start()
     {
-        _price = 10;
+        _price = gp._autoprice;
     }
 
     void Update()
@@ -22,14 +22,9 @@ public class Autoclick : MonoBehaviour
 
     public void IncreasePrice()
     {
-        _price = _price * 2;
-    }
-
-    public void DecreasePoints()
-    {
-        if (gp._currentScore >= _price)
-        {
-            gp._currentScore -= _price;
+        if (gp._currentScore >= _price) 
+        { 
+            _price = _price * 2;
         }
     }
 }
