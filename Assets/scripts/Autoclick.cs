@@ -27,6 +27,9 @@ public class Autoclick : MonoBehaviour
 
     public void DecreasePoints()
     {
-        gp._currentScore -= _price;
+        if (gp._currentScore >= _price)
+        {
+            gp._currentScore -= _price;
+        }
     }
 }
