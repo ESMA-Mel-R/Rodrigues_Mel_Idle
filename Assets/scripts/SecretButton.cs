@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SecretButton : MonoBehaviour
 {
-    public Autoclick Ac;
     public Getpoints Gp;
     private bool active;
 

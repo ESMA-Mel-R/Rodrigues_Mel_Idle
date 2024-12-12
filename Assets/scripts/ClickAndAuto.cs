@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
-public class Getpoints : MonoBehaviour
+public class ClickAndAuto : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _priceText;
@@ -40,7 +39,7 @@ public class Getpoints : MonoBehaviour
     {
         _currentScore = _currentScore + _addScore;
     }
-    
+
     //setting of multiplier button : increase the gain each time it's clicked
     public void MultiplierScore()
     {
