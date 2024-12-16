@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SecretButton : MonoBehaviour
 {
+    public Getpoints _gp;
     private bool active;
 
     void Start()
@@ -16,7 +17,6 @@ public class SecretButton : MonoBehaviour
         if (active)
         {
             StartCoroutine(Boost());
-            active = false;
         }
     }
 
@@ -30,5 +30,6 @@ public class SecretButton : MonoBehaviour
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
         yield return new WaitForSeconds(5);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        active = false;
     }
 }
