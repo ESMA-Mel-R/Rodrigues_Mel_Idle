@@ -15,4 +15,6 @@ public class Shop : MonoBehaviour
     {
         _store.SetActive(false);
     }
+
+    
 }

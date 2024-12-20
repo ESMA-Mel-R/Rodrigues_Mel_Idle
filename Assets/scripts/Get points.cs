@@ -10,13 +10,17 @@ public class Getpoints : MonoBehaviour
     [SerializeField] private TMP_Text _autopriceText;
     [SerializeField] private TMP_Text _multipriceText;
     private float _currentScore;
-    private float _addScore;
+    public float _addScore;
     private bool _auto;
     private int _autoPerSec;
     private float _autoprice;
     private float _multiprice;
     private int _autoBoost;
     private int _multiboost;
+    private bool _upgrade1;
+    private bool _upgrade2;
+    private bool _upgrade3;
+    private bool _upgrade4;
 
     private void Start()
     {
@@ -28,6 +32,10 @@ public class Getpoints : MonoBehaviour
         _multiprice = 10;
         _autoBoost = 1;
         _multiboost = 1;
+        _upgrade1 = false;
+        _upgrade2 = false;
+        _upgrade3 = false;
+        _upgrade4 = false;
     }
 
     private void Update()
@@ -86,5 +94,14 @@ public class Getpoints : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         _autoBoost = 1;
         _multiboost = 1;
+    }
+
+    public void MultiplicatorUpgrade()
+    {
+        if (!_upgrade1)
+        {
+            _addScore = _addScore * 2;
+            _upgrade1 = true;
+        }
     }
 }
