@@ -34,7 +34,7 @@ public class Getpoints : MonoBehaviour
     {
         _autopriceText.text = _autoprice.ToString();
         _multipriceText.text = _multiprice.ToString();
-        _scoreText.text = _currentScore.ToString("0");
+        _scoreText.text = _currentScore.ToString("$ " + "0");
 
         //update according to autoclick
         if (_auto)
