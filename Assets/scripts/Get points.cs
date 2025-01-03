@@ -104,4 +104,13 @@ public class Getpoints : MonoBehaviour
             _upgrade1 = true;
         }
     }
+
+    public void AutoScoreUpgrade()
+    {
+        if (!_upgrade2)
+        {
+            _autoPerSec = _autoPerSec * 2;
+            _upgrade2 = true;
+        }
+    }
 }

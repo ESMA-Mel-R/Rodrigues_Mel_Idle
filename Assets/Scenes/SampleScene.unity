@@ -625,6 +625,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _store: {fileID: 1263761722}
+  _UP1: {fileID: 2123428200}
+  _UP2: {fileID: 1162984451}
+  _UP3: {fileID: 2044663038}
+  _UP4: {fileID: 920613688}
 --- !u!1 &302353274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1873,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 920613691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284781913}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: ColorChange4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &920613691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2253,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1162984454}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284781912}
+        m_TargetAssemblyTypeName: Getpoints, Assembly-CSharp
+        m_MethodName: AutoScoreUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 284781913}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: ColorChange2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1162984454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,7 +3779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2044663041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284781913}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: ColorChange3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2044663041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3998,6 +4050,18 @@ MonoBehaviour:
       - m_Target: {fileID: 284781912}
         m_TargetAssemblyTypeName: Getpoints, Assembly-CSharp
         m_MethodName: MultiplicatorUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 284781913}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: ColorChange1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
