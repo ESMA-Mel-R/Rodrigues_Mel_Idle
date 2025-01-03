@@ -21,16 +21,18 @@ public class Getpoints : MonoBehaviour
     private bool _upgrade2;
     private bool _upgrade3;
     private bool _upgrade4;
+    private int _aSpeed;
 
     private void Start()
     {
+        _aSpeed = 1;
         _currentScore = 0;
         _addScore = 1;
         _autoPerSec = 0;
         _auto = false;
         _autoprice = 5;
         _multiprice = 10;
-        _autoBoost = 1;
+        _autoBoost = _aSpeed;
         _multiboost = 1;
         _upgrade1 = false;
         _upgrade2 = false;
@@ -88,11 +90,11 @@ public class Getpoints : MonoBehaviour
     IEnumerator Boost()
     {
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        _autoBoost = 2;
+        _autoBoost = _aSpeed * 2;
         _multiboost = 2;
         yield return new WaitForSeconds(5);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        _autoBoost = 1;
+        _autoBoost = _aSpeed;
         _multiboost = 1;
     }
 
@@ -111,6 +113,15 @@ public class Getpoints : MonoBehaviour
         {
             _autoPerSec = _autoPerSec * 2;
             _upgrade2 = true;
+        }
+    }
+
+    public void AutoSpeedUpgrade()
+    {
+        if (!_upgrade3)
+        {
+            _aSpeed = _aSpeed * 2;
+            _upgrade3 = true;
         }
     }
 }
