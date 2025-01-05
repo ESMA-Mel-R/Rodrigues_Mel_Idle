@@ -9,19 +9,25 @@ public class Getpoints : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _autopriceText;
     [SerializeField] private TMP_Text _multipriceText;
+
     private float _currentScore;
     public float _addScore;
     private bool _auto;
     private int _autoPerSec;
+    private int _aSpeed;
+
     private float _autoprice;
     private float _multiprice;
     private int _autoBoost;
     private int _multiboost;
+
     private bool _upgrade1;
     private bool _upgrade2;
     private bool _upgrade3;
     private bool _upgrade4;
-    private int _aSpeed;
+
+    public bool _randomBoost;
+    public GameObject _boosterButton;
 
     private void Start()
     {
@@ -50,6 +56,18 @@ public class Getpoints : MonoBehaviour
         if (_auto)
         {
             _currentScore += _autoPerSec * Time.deltaTime * _autoBoost;
+        }
+
+        //booster setup
+        if (_randomBoost == false && _boosterButton.activeInHierarchy == true)
+        {
+            _boosterButton.SetActive(false);
+            StartCoroutine(WaitForEvent());
+        }
+
+        if (_randomBoost == true && _boosterButton.activeInHierarchy == false)
+        {
+            _boosterButton.SetActive(true);
         }
     }
 
@@ -87,6 +105,12 @@ public class Getpoints : MonoBehaviour
         StartCoroutine(Boost());
     }
 
+    IEnumerator WaitForEvent()
+    {
+        yield return new WaitForSeconds(5f);
+    }
+
+    //script for random booster
     IEnumerator Boost()
     {
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
@@ -98,6 +122,7 @@ public class Getpoints : MonoBehaviour
         _multiboost = 1;
     }
 
+    //upgrades from the shop
     public void MultiplicatorUpgrade()
     {
         if (!_upgrade1)
