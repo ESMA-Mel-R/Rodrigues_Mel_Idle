@@ -10,6 +10,12 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject _UP2;
     [SerializeField] private GameObject _UP3;
     [SerializeField] private GameObject _UP4;
+    public Getpoints _GP;
+
+    private void Start()
+    {
+        _GP = GetComponent<Getpoints>();
+    }
 
     public void StoreActivate()
     {
@@ -23,19 +29,31 @@ public class Shop : MonoBehaviour
 
     public void ColorChange1()
     {
-        _UP1.GetComponent<Image>().color = Color.green;
+        if (_GP._currentScore >= 250)
+        {
+            _UP1.GetComponent<Image>().color = Color.green;
+        }
     }
     public void ColorChange2()
     {
-        _UP2.GetComponent<Image>().color = Color.green;
+        if ( _GP._currentScore >= 500)
+        {
+            _UP2.GetComponent<Image>().color = Color.green;
+        }
     }
     public void ColorChange3()
     {
-        _UP3.GetComponent<Image>().color = Color.green;
+        if (_GP._currentScore >= 1000)
+        {
+            _UP3.GetComponent<Image>().color = Color.green;
+        }
     }
     public void ColorChange4()
     {
-        _UP4.GetComponent<Image>().color = Color.green;
+        if  (_GP._currentScore >= 1500)
+        {
+            _UP4.GetComponent<Image>().color = Color.green;
+        }
     }
 
 }

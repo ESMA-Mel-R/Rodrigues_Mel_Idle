@@ -10,7 +10,7 @@ public class Getpoints : MonoBehaviour
     [SerializeField] private TMP_Text _autopriceText;
     [SerializeField] private TMP_Text _multipriceText;
 
-    private float _currentScore;
+    public float _currentScore;
     public float _addScore;
     private bool _auto;
     private int _autoPerSec;
@@ -142,7 +142,7 @@ public class Getpoints : MonoBehaviour
     //upgrades from the shop
     public void MultiplicatorUpgrade()
     {
-        if (!_upgrade1)
+        if (!_upgrade1 && _currentScore >= 250)
         {
             _addScore = _addScore * 2;
             _upgrade1 = true;
@@ -151,7 +151,7 @@ public class Getpoints : MonoBehaviour
 
     public void AutoScoreUpgrade()
     {
-        if (!_upgrade2)
+        if (!_upgrade2 && _currentScore >= 500)
         {
             _autoPerSec = _autoPerSec * 2;
             _upgrade2 = true;
@@ -160,7 +160,7 @@ public class Getpoints : MonoBehaviour
 
     public void AutoSpeedUpgrade()
     {
-        if (!_upgrade3)
+        if (!_upgrade3 && _currentScore >= 1000)
         {
             _aSpeed = _aSpeed * 2;
             _upgrade3 = true;
