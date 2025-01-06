@@ -110,7 +110,7 @@ public class Getpoints : MonoBehaviour
 
     IEnumerator WaitForEvent()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
 
         int x = 0;
         x = Random.Range(1, 3);
@@ -118,9 +118,11 @@ public class Getpoints : MonoBehaviour
         if (x == 2)
         {
             _randomBoost = true;
+            _boosterButton.SetActive(false);
         }
         else
         {
+            _randomBoost = false;
             _boosterButton.SetActive(true);
         }
     }
