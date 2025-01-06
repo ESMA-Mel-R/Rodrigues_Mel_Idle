@@ -28,6 +28,7 @@ public class Getpoints : MonoBehaviour
 
     public bool _randomBoost;
     public GameObject _boosterButton;
+    private float _ran;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class Getpoints : MonoBehaviour
         _upgrade2 = false;
         _upgrade3 = false;
         _upgrade4 = false;
+        _ran = 15f;
     }
 
     private void Update()
@@ -110,7 +112,7 @@ public class Getpoints : MonoBehaviour
 
     IEnumerator WaitForEvent()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(_ran);
 
         int x = 0;
         x = Random.Range(1, 3);
@@ -118,11 +120,9 @@ public class Getpoints : MonoBehaviour
         if (x == 2)
         {
             _randomBoost = true;
-            _boosterButton.SetActive(false);
         }
         else
         {
-            _randomBoost = false;
             _boosterButton.SetActive(true);
         }
     }
@@ -164,6 +164,15 @@ public class Getpoints : MonoBehaviour
         {
             _aSpeed = _aSpeed * 2;
             _upgrade3 = true;
+        }
+    }
+
+    public void BoostFrequencyUpgrade()
+    {
+        if (!_upgrade4 && _currentScore >= 1500)
+        {
+            _ran = _ran / 2;
+            _upgrade4 = true;
         }
     }
 }
