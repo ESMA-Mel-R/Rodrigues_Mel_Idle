@@ -746,6 +746,8 @@ MonoBehaviour:
   _autopriceText: {fileID: 619296483}
   _multipriceText: {fileID: 324735612}
   _addScore: 0
+  _randomBoost: 0
+  _boosterButton: {fileID: 302353274}
 --- !u!114 &284781913
 MonoBehaviour:
   m_ObjectHideFlags: 0

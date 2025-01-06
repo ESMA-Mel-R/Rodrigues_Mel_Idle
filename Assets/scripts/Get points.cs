@@ -59,12 +59,14 @@ public class Getpoints : MonoBehaviour
         }
 
         //booster setup
+        //deactivate the event button when the condition is false and starts the waiting script
         if (_randomBoost == false && _boosterButton.activeInHierarchy == true)
         {
             _boosterButton.SetActive(false);
             StartCoroutine(WaitForEvent());
         }
 
+        //activate the event button when the condition is true
         if (_randomBoost == true && _boosterButton.activeInHierarchy == false)
         {
             _boosterButton.SetActive(true);
@@ -103,11 +105,24 @@ public class Getpoints : MonoBehaviour
     public void Booster()
     {
         StartCoroutine(Boost());
+        StartCoroutine(WaitForEvent());
     }
 
     IEnumerator WaitForEvent()
     {
         yield return new WaitForSeconds(5f);
+
+        int x = 0;
+        x = Random.Range(1, 3);
+
+        if (x == 2)
+        {
+            _randomBoost = true;
+        }
+        else
+        {
+            _boosterButton.SetActive(true);
+        }
     }
 
     //script for random booster
