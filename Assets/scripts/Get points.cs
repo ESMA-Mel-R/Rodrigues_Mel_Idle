@@ -9,6 +9,7 @@ public class Getpoints : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _autopriceText;
     [SerializeField] private TMP_Text _multipriceText;
+    [SerializeField] private GameObject _Aura;
 
     public float _currentScore;
     public float _addScore;
@@ -45,7 +46,7 @@ public class Getpoints : MonoBehaviour
         _upgrade2 = false;
         _upgrade3 = false;
         _upgrade4 = false;
-        _ran = 15f;
+        _ran = 30f;
     }
 
     private void Update()
@@ -132,10 +133,12 @@ public class Getpoints : MonoBehaviour
     {
         _randomBoost = false;
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        _Aura.SetActive(true);
         _autoBoost = _aSpeed * 2;
         _multiboost = 2;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        _Aura.SetActive(false);
         _autoBoost = _aSpeed;
         _multiboost = 1;
     }
