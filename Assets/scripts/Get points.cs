@@ -145,6 +145,7 @@ public class Getpoints : MonoBehaviour
     {
         if (!_upgrade1 && _currentScore >= 250)
         {
+            _currentScore -= 250;
             _addScore = _addScore * 2;
             _upgrade1 = true;
         }
@@ -154,6 +155,7 @@ public class Getpoints : MonoBehaviour
     {
         if (!_upgrade2 && _currentScore >= 500)
         {
+            _currentScore -= 500;
             _autoPerSec = _autoPerSec * 2;
             _upgrade2 = true;
         }
@@ -163,6 +165,7 @@ public class Getpoints : MonoBehaviour
     {
         if (!_upgrade3 && _currentScore >= 1000)
         {
+            _currentScore -= 1000;
             _aSpeed = _aSpeed * 2;
             _upgrade3 = true;
         }
@@ -172,6 +175,7 @@ public class Getpoints : MonoBehaviour
     {
         if (!_upgrade4 && _currentScore >= 1500)
         {
+            _currentScore -= 1500;
             _ran = _ran / 2;
             _upgrade4 = true;
         }
