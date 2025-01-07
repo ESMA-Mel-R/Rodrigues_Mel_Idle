@@ -37,8 +37,8 @@ public class Getpoints : MonoBehaviour
         _addScore = 1;
         _autoPerSec = 0;
         _auto = false;
-        _autoprice = 5;
-        _multiprice = 10;
+        _autoprice = 20;
+        _multiprice = 30;
         _autoBoost = _aSpeed;
         _multiboost = 1;
         _upgrade1 = false;
@@ -88,7 +88,7 @@ public class Getpoints : MonoBehaviour
         {
             _addScore += 1;
             _currentScore -= _multiprice;
-            _multiprice += 10;
+            _multiprice += 30;
         }
     }
 
@@ -100,7 +100,7 @@ public class Getpoints : MonoBehaviour
             _auto = true;
             _currentScore -= _autoprice;
             _autoPerSec += 1;
-            _autoprice += 15;
+            _autoprice += 20;
         }
     }
 
