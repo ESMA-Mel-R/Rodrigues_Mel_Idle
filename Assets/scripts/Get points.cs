@@ -88,7 +88,7 @@ public class Getpoints : MonoBehaviour
         {
             _addScore += 1;
             _currentScore -= _multiprice;
-            _multiprice += 5;
+            _multiprice += 10;
         }
     }
 
@@ -100,7 +100,7 @@ public class Getpoints : MonoBehaviour
             _auto = true;
             _currentScore -= _autoprice;
             _autoPerSec += 1;
-            _autoprice += 5;
+            _autoprice += 15;
         }
     }
 
@@ -130,6 +130,7 @@ public class Getpoints : MonoBehaviour
     //script for random booster
     IEnumerator Boost()
     {
+        _randomBoost = false;
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
         _autoBoost = _aSpeed * 2;
         _multiboost = 2;
